@@ -21,7 +21,7 @@ class PDFReport:
         self.insert_title(file=pdf)
 
         # Insert Billing Cycle/Period
-        self.insert_value(file=pdf, key="Period", value=bill.period)
+        self.insert_value(file=pdf, key="Billing Cycle", value=bill.period)
 
         # Insert Contributors and Share
         for person in flatmates:
@@ -36,14 +36,14 @@ class PDFReport:
     @staticmethod
     def insert_title(file):
         file.set_font(family='Times', size=24, style='B')
-        file.cell(w=0, h=50, txt="Flatmates Bill", border=1, align="C", ln=1)
+        file.cell(w=0, h=50, txt="Flatmates Bill", border=1, align="C", ln=2)
 
     @staticmethod
     def insert_value(file, key, value):
         file.set_font(family='Times', size=12, style='B')
-        file.cell(w=269, h=20, txt=key, border=1, align="C")
+        file.cell(w=269, h=20, txt=key, border=0, align="C")
         file.set_font(family='Times', size=14)
-        file.cell(w=269, h=20, txt=value, border=1, align="C", ln=1)
+        file.cell(w=269, h=20, txt=value, border=0, align="C", ln=1)
 
     @ staticmethod
     def insert_total_bill(file, bill):
