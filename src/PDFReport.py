@@ -1,6 +1,10 @@
+import configparser
+import os
 import webbrowser
 
 from fpdf import FPDF
+
+from src.upload_pdf import upload_to_github
 
 
 class PDFReport:
@@ -13,7 +17,7 @@ class PDFReport:
     def __init__(self, filename):
         self.filename = filename
 
-    def generate(self, flatmates, bill):
+    def generate(self, flatmates, bill, upload_to_cloud):
         pdf = FPDF(orientation='P', unit='pt', format='A4')
         pdf.add_page()
 
@@ -30,8 +34,12 @@ class PDFReport:
         # Insert Total Bill
         self.insert_total_bill(file=pdf, bill=bill)
 
+        upload = False
+
+        if upload_to_cloud == 'Y':
+            upload = True
         # Generate Output
-        self.output(file=pdf)
+        self.output(file=pdf, upload_to_cloud=upload)
 
     @staticmethod
     def insert_title(file):
@@ -45,13 +53,19 @@ class PDFReport:
         file.set_font(family='Times', size=14)
         file.cell(w=269, h=20, txt=value, border=0, align="C", ln=1)
 
-    @ staticmethod
+    @staticmethod
     def insert_total_bill(file, bill):
         file.set_font(family='Times', size=14, style='B')
         file.cell(w=269, h=25, txt="Total", border=1, align="C")
         file.set_font(family='Times', size=14)
         file.cell(w=269, h=25, txt=str(bill.amount), border=1, align="C", ln=1)
 
-    def output(self, file):
+    def output(self, file, upload_to_cloud):
         file.output(self.filename)
         webbrowser.open(self.filename)
+        if upload_to_cloud:
+            github_token = 'your_github_personal_access_token'
+            repository_owner = 'your_username_or_organization'
+            repository_name = 'your_repository_name'
+            file_path = 'path/to/your/file.txt'
+            upload_to_github(github_token, repository_owner, repository_name, file_path)

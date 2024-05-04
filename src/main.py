@@ -37,7 +37,8 @@ def generate_bill(flatmates, bill):
 
     filename = f'{bill.period}_{bill.category}_Bill.pdf'
     pdf_report = PDFReport(filename=filename)
-    pdf_report.generate(flatmates, bill=bill)
+    upload_to_cloud = str(input("Do you want to upload the bill to Cloud?(Y/N)"))
+    pdf_report.generate(flatmates, bill=bill, upload_to_cloud=upload_to_cloud)
 
 
 # Press the green button in the gutter to run the script.
