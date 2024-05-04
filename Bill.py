@@ -5,6 +5,7 @@ class Bill:
     Period: Billing Period(for calculating payable amount)
     """
 
-    def __init__(self, amount, period):
+    def __init__(self, amount, category, period):
         self.amount = amount;
+        self.category = category
         self.period = period;
