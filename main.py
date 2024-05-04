@@ -8,24 +8,42 @@ Start running this file and you'll find a bill generated in your root directory.
 """
 
 
-def generate_bill():
-    bill = Bill(amount=1500, period="April 2024")
-    Harsh = Flatmate(name="Harsh", stay_duration=20)
-    Rounik = Flatmate(name="Rounik", stay_duration=30)
-    Anupam = Flatmate(name="Anupam", stay_duration=7)
+def setup_flatmates():
+    flatmates = []
+    n = int(input("Enter total number of Flatmates: "))
+    for i in range(0, n):
+        if i == 0:
+            name = str(input(f'Enter your name: '))
+            duration = int(input(f'Enter Number of days you stayed: '))
+            flatmates.append(Flatmate(name=name, stay_duration=duration))
+        else:
+            name = str(input(f'Enter name of the {i + 1}th person: '))
+            duration = int(input(f'Enter Number of days {name} stayed: '))
+            flatmates.append(Flatmate(name=name, stay_duration=duration))
 
-    Harsh.pays(bill=bill, flatmate2=Rounik, flatmate3=Anupam)
-    Rounik.pays(bill=bill, flatmate2=Harsh, flatmate3=Anupam)
-    Anupam.pays(bill=bill, flatmate2=Rounik, flatmate3=Harsh)
+    return flatmates
 
-    filename = f'{bill.period}_Bill.pdf'
+
+def setup_bill():
+    amount = int(input("Enter Bill amount: "))
+    category = str(input("Enter Bill category: "))
+    period = str(input("Enter Billing cycle(without spaces): "))
+    return Bill(amount=amount, category=category, period=period)
+
+
+def generate_bill(flatmates, bill):
+    for person in flatmates:
+        person.pays(bill=bill, flatmates=flatmates)
+
+    filename = f'{bill.period}_{bill.category}_Bill.pdf'
     pdf_report = PDFReport(filename=filename)
-    flatmates = [Harsh, Anupam, Rounik]
     pdf_report.generate(flatmates, bill=bill)
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    generate_bill()
+    flatmates = setup_flatmates()
+    bill = setup_bill()
+    generate_bill(flatmates=flatmates, bill=bill)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
