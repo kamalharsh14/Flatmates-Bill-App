@@ -41,6 +41,7 @@ def generate_bill(flatmates, bill):
     pdf_report.generate(flatmates, bill=bill, upload_to_cloud=upload_to_cloud)
 
 
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     flatmates = setup_flatmates()

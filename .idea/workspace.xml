@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d29ddb1-a28a-4c99-a4cb-4bef977f17c8" name="Changes" comment="reframed folder structure and added sample_test">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/creds.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/file.txt" afterDir="false" />
+    <list default="true" id="1d29ddb1-a28a-4c99-a4cb-4bef977f17c8" name="Changes" comment="added custom inputs through CLI">
+      <change afterPath="$PROJECT_DIR$/BillForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BillFormPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultsPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bill.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PDFReport.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/PDFReport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bill.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Bill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Flatmate.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Flatmate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PDFReport.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/PDFReport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/sample_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/upload_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/upload_pdf.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +29,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="add-cli" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +69,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Python tests.Python tests in sample_input.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
     &quot;Python.Bill.executor&quot;: &quot;Run&quot;,
@@ -69,7 +79,9 @@
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.unittest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;upload-file-to-cloud&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;web-app&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Python/Flatmates Bill App/templates&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -79,11 +91,17 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Python\Flatmates Bill App\templates" />
+      <recent name="D:\Projects\Python\Flatmates Bill App\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Python\Flatmates Bill App" />
+      <recent name="D:\Projects\Python\Flatmates Bill App\templates" />
       <recent name="D:\Projects\Python\Flatmates Bill App\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in sample_input.py">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Flatmates Bill App" />
       <option name="ENV_FILES" value="" />
@@ -97,7 +115,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Projects\Python\Flatmates Bill App\src\main.py" />
+      <option name="SCRIPT_NAME" value="D:\Projects\Python\Flatmates Bill App\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,26 +124,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in sample_input.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Flatmates Bill App" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/sample_input.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.Python tests in sample_input.py" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -175,15 +173,7 @@
       <option name="project" value="LOCAL" />
       <updated>1714817803968</updated>
     </task>
-    <task id="LOCAL-00005" summary="reframed folder structure and added sample_test">
-      <option name="closed" value="true" />
-      <created>1714819714848</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1714819714848</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,7 +192,6 @@
     <MESSAGE value="add readme" />
     <MESSAGE value="basic App with static values" />
     <MESSAGE value="added custom inputs through CLI" />
-    <MESSAGE value="reframed folder structure and added sample_test" />
-    <option name="LAST_COMMIT_MESSAGE" value="reframed folder structure and added sample_test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added custom inputs through CLI" />
   </component>
 </project>

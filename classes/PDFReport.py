@@ -4,7 +4,7 @@ import webbrowser
 
 from fpdf import FPDF
 
-from src.upload_pdf import upload_to_github
+from classes.upload_pdf import upload_to_github
 
 
 class PDFReport:

@@ -1,9 +1,8 @@
-import os
 import unittest
 from io import StringIO
 import sys
 
-from src.main import setup_flatmates, setup_bill, generate_bill
+from main import setup_flatmates, setup_bill, generate_bill
 
 
 class TestBillGeneration(unittest.TestCase):

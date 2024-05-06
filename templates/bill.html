@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form</title>
+    </head>
+    <body>
+        <h2>Welcome to Bill Page</h2>
+        <form action="/results" method="post">
+            {{billForm.amount.label}}  {{billForm.amount}}
+            <br>
+            {{billForm.category.label}}  {{billForm.category}}
+            <br>
+            {{billForm.period.label}}  {{billForm.period}}
+            <hr>
+            <h2>Flatmate 1</h2>
+            {{billForm.name_1.label}}  {{billForm.name_1}}
+            <br>
+            {{billForm.stay_duration_1.label}}  {{billForm.stay_duration_1}}
+            <hr>
+            <h2>Flatmate 2</h2>
+            {{billForm.name_2.label}}  {{billForm.name_2}}
+            <br>
+            {{billForm.stay_duration_2.label}}  {{billForm.stay_duration_2}}
+            <hr>
+            <br>
+            {{billForm.button}}
+        </form>
+    </body>
+</html>
