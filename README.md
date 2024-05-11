@@ -7,7 +7,6 @@ Welcome to the Flatmates Bill Sharing App! This Python application is designed t
 - **Bill Splitting**: Divide bills among flatmates based on their share.
 - **Expense Tracking**: Keep a record of all expenses made by each flatmate.
 - **User-Friendly Interface**: Simple command-line interface for easy navigation.
-- **Data Persistence**: Data is stored locally to maintain records even after the application is closed.
 
 ## Getting Started
 
