@@ -12,4 +12,4 @@ app.add_url_rule('/home', view_func=HomePage.as_view('home'))
 app.add_url_rule('/bill', view_func=BillFormPage.as_view('bill_form_page'))
 app.add_url_rule('/results', view_func=ResultsPage.as_view('result_page'))
 
-app.run(debug=True)
+app.run()
